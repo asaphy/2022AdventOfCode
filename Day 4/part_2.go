@@ -38,8 +38,8 @@ func main() {
 		assignmentOneEnd, _ := strconv.Atoi(assignmentOne[1])
 		assignmentTwoStart, _ := strconv.Atoi(assignmentTwo[0])
 		assignmentTwoEnd, _ := strconv.Atoi(assignmentTwo[1])
-		
-		if (assignmentOneStart >= assignmentTwoStart && assignmentOneEnd >= assignmentTwoEnd) || (assignmentTwoStart <= assignmentOneStart && assignmentTwoEnd >= assignmentOneEnd) {
+	  
+		if assignmentTwoStart <= assignmentOneEnd && assignmentOneStart <= assignmentTwoStart || assignmentOneStart <= assignmentTwoEnd && assignmentTwoStart <= assignmentOneStart{
 			assignmentsFullyContainedSum += 1
 		}
 	}
