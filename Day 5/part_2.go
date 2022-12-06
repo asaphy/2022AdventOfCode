@@ -34,8 +34,6 @@ func (s *Stack[T]) Push(t T) {
 func (s *Stack[T]) Pop() T {
 	n := len(s.items)
 	t := s.items[n-1]
-	var zero T
-	s.items[n-1] = zero
 	s.items = s.items[:n-1]
 	return t
 }
@@ -68,7 +66,7 @@ func main() {
 			characters := strings.Split(scanner.Text(), "")
 			for i:=0; i<len(characters); i+=4 {
 				if IsLetter(characters[i+1]) {
-				  stackSlice[(i+1)/4 + 1].Push(characters[i+1])
+				  stackSlice[i/4 + 1].Push(characters[i+1])
 				}
 			}
 		} else if lineCounter == 9 {
